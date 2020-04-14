@@ -5,7 +5,7 @@ const webpack = require("webpack");
 module.exports = {
   entry: ["./src/index.js"],
   output: {
-    path: __dirname,
+    path: __dirname + "/build",
     filename: "bundle.js",
     publicPath: "/",
   },
@@ -18,7 +18,7 @@ module.exports = {
       {
         oneOf: [
           //   {
-          //     test: /.jsx?$/,
+          //     test: /.jsx$/,
           //     use: {
           //       loader: require.resolve("babel-loader"),
           //       options: {
@@ -78,6 +78,7 @@ module.exports = {
   devServer: {
     hot: true,
     historyApiFallback: true,
+    writeToDisk: true,
     // progress: true,
     // host: '0.0.0.0',
     // contentBase: './public',
