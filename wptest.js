@@ -1,5 +1,4 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const InterpolateHtmlPlugin = require("react-dev-utils/InterpolateHtmlPlugin");
 const path = require("path");
 const webpack = require("webpack");
 
@@ -18,21 +17,21 @@ module.exports = {
     rules: [
       {
         oneOf: [
-          {
-            test: /.jsx?$/,
-            use: {
-              loader: require.resolve("babel-loader"),
-              options: {
-                presets: ["react-app"],
-                plugins: [
-                  ["import", { libraryName: "antd", style: "css" }],
-                  "transform-decorators-legacy",
-                ],
-              },
-            },
-            include: path.resolve("./src"),
-            exclude: /node_modules/,
-          },
+          //   {
+          //     test: /.jsx?$/,
+          //     use: {
+          //       loader: require.resolve("babel-loader"),
+          //       options: {
+          //         presets: ["react-app"],
+          //         plugins: [
+          //           ["import", { libraryName: "antd", style: "css" }],
+          //           "transform-decorators-legacy",
+          //         ],
+          //       },
+          //     },
+          //     include: path.resolve("./src"),
+          //     exclude: /node_modules/,
+          //   },
           //注：我们自己不写css，因此只有第3方库有css，它们的css不使用module(antd)
           {
             test: /\.css$/,
@@ -69,7 +68,6 @@ module.exports = {
   },
   devtool: "eval",
   plugins: [
-    new InterpolateHtmlPlugin({}),
     new HtmlWebpackPlugin({
       inject: true,
       template: "./public/index.html",

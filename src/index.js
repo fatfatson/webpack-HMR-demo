@@ -5,7 +5,7 @@ console.log("load index", util());
 
 let root = document.getElementById("root");
 let div1 = document.createElement("div");
-div1.innerText = "12 wait for update";
+div1.innerText = "123 wait for update";
 root.appendChild(div1);
 
 if (module.hot) {
