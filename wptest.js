@@ -17,26 +17,26 @@ module.exports = {
     rules: [
       {
         oneOf: [
-          //   {
-          //     test: /.(js|ts)$/,
-          //     use: {
-          //       loader: require.resolve("babel-loader"),
-          //       options: {
-          //         presets: [
-          //           [
-          //             "@babel/preset-typescript",
-          //             { allExtensions: true, isTSX: true },
-          //           ],
-          //         ],
-          //         plugins: [
-          //           //   ["import", { libraryName: "antd", style: "css" }],
-          //           //   "transform-decorators-legacy",
-          //         ],
-          //       },
-          //     },
-          //     include: path.resolve("./src"),
-          //     exclude: /node_modules/,
-          //   },
+          {
+            test: /.(js|ts)$/,
+            use: {
+              loader: require.resolve("babel-loader"),
+              options: {
+                presets: [
+                  [
+                    "@babel/preset-typescript",
+                    { allExtensions: true, isTSX: true },
+                  ],
+                ],
+                plugins: [
+                  //   ["import", { libraryName: "antd", style: "css" }],
+                  //   "transform-decorators-legacy",
+                ],
+              },
+            },
+            include: path.resolve("./src"),
+            exclude: /node_modules/,
+          },
           //注：我们自己不写css，因此只有第3方库有css，它们的css不使用module(antd)
           {
             test: /\.css$/,

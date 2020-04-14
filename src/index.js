@@ -4,7 +4,7 @@ import styles from "./main.less";
 let version = 1;
 console.log("load index", util());
 
-let root = document.getElementById("root");
+let root = document.getElementById("root")!;
 let div1 = document.createElement("div");
 div1.innerText = "123 wait for update";
 div1.className = styles.title;
