@@ -18,14 +18,19 @@ module.exports = {
       {
         oneOf: [
           //   {
-          //     test: /.jsx$/,
+          //     test: /.(js|ts)$/,
           //     use: {
           //       loader: require.resolve("babel-loader"),
           //       options: {
-          //         presets: ["react-app"],
+          //         presets: [
+          //           [
+          //             "@babel/preset-typescript",
+          //             { allExtensions: true, isTSX: true },
+          //           ],
+          //         ],
           //         plugins: [
-          //           ["import", { libraryName: "antd", style: "css" }],
-          //           "transform-decorators-legacy",
+          //           //   ["import", { libraryName: "antd", style: "css" }],
+          //           //   "transform-decorators-legacy",
           //         ],
           //       },
           //     },
