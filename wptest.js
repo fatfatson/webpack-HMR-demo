@@ -2,8 +2,10 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const webpack = require("webpack");
 
+let entry = "./src/index.js";
+// entry = "./src/index.ts";
 module.exports = {
-  entry: ["./src/index.js"],
+  entry: [entry],
   output: {
     path: __dirname + "/build",
     filename: "bundle.js",
@@ -11,12 +13,18 @@ module.exports = {
   },
   resolve: {
     modules: ["node_modules"],
-    extensions: [".js", ".json", ".jsx"],
+    extensions: [".js", ".ts", ".json", ".jsx"],
   },
   module: {
     rules: [
       {
         oneOf: [
+          //   {
+          //     test: /.ts$/,
+          //     use: {
+          //       loader: "ts-loader",
+          //     },
+          //   },
           {
             test: /.(js|ts)$/,
             use: {
@@ -25,7 +33,7 @@ module.exports = {
                 presets: [
                   [
                     "@babel/preset-typescript",
-                    { allExtensions: true, isTSX: true },
+                    // { allExtensions: true, isTSX: true },
                   ],
                 ],
                 plugins: [
