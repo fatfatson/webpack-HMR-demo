@@ -3,7 +3,7 @@ const path = require("path");
 const webpack = require("webpack");
 
 let entry = "./src/index.js";
-// entry = "./src/index.ts";
+entry = "./src/index.ts";
 module.exports = {
   entry: [entry],
   output: {

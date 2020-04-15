@@ -1,3 +1,3 @@
 export default function () {
-  return "abcd1234xyzj ";
+  return "abcd1234j ";
 }

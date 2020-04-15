@@ -1,4 +1,5 @@
 import util from "./util";
+import tool from "./tool";
 // import styles from "./main.less";
 
 let version = 1;
@@ -18,13 +19,12 @@ setInterval(() => {
   div2.innerText = `ts: prove the page is not refresh: ${i++}`;
 }, 1000);
 
-let hot = (module as any).hot;
-if (hot) {
+if (module.hot) {
   var registerHotUpdate;
   registerHotUpdate = function () {
-    hot.accept(["./src/util.js", "./main.less"], () => {
+    module.hot.accept(["./util.js", "./tool.ts", "./main.less"], () => {
       console.log("***** accept App hot update 1*******", version, util());
-      div1.innerText = util();
+      div1.innerHTML = util() + "<br>" + tool();
     });
   };
   registerHotUpdate();
